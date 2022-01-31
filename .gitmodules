@@ -1,0 +1,3 @@
+[submodule "plugin/vite-plugin-vnesting-server-middlewares"]
+	path = plugin/vite-plugin-vnesting-server-middlewares
+	url = https://github.com/vnesting/vite-plugin-vnesting-server-middlewares.git

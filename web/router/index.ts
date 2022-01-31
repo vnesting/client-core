@@ -1,7 +1,7 @@
 import { PRO_OR_NOT } from "./../util/Mode";
 import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router";
 import coreRoutes from "./route";
-import routes from "@web/../../../router/route";
+import routes from "@/router/route";
 
 let allRoutes = [...routes, ...coreRoutes];
 const router = createRouter({

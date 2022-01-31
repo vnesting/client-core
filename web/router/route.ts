@@ -9,7 +9,7 @@ let routes: RouteRecordRaw[] = [
 			__title: "welcome",
 			keepAlive: true,
 		},
-		component: () => import("@/core/views/home/Home.vue"),
+		component: () => import("@web/views/home/Home.vue"),
 	},
 	// 错误页面
 	{
@@ -27,18 +27,18 @@ let routes: RouteRecordRaw[] = [
 		meta: {
 			__title: "system",
 		},
-		component: () => import("@/core/views/system/index.vue"),
+		component: () => import("@web/views/system/index.vue"),
 		children: system,
 	},
 	// 登录相关
 	{
 		path: "/sign",
-		component: () => import("@/core/views/system/index.vue"),
+		component: () => import("@web/views/system/index.vue"),
 		children: sign,
 	},
 	{
 		path: "/reflash",
-		component: () => import("@/core/views/Reflash.vue"),
+		component: () => import("@web/views/Reflash.vue"),
 	},
 	{
 		path: "/:pathMatch(.*)*",

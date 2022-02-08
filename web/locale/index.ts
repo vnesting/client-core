@@ -1,19 +1,19 @@
-import { createI18n } from "vue-i18n";
+import { createI18n, I18nOptions } from "vue-i18n";
 import enLocale from "./lang/en";
 import zhLocale from "./lang/zh";
-import messages from "@/locale/lang";
-import merge from "utils-merge";
-let coreMessages = {
-	en: {
-		...enLocale,
-	},
-	zh: {
-		...zhLocale,
-	},
-	tw: {},
-};
-coreMessages = merge(messages, coreMessages);
-export default createI18n({
+import config from "@/locale";
+import merge from "@web/util/mergeUtil";
+
+let coreConfig: I18nOptions = {
 	locale: "zh",
-	coreMessages,
-});
+	messages: {
+		en: {
+			...enLocale,
+		},
+		zh: {
+			...zhLocale,
+		},
+		tw: {},
+	},
+};
+export default createI18n(merge(coreConfig, config));

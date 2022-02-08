@@ -2,7 +2,9 @@ import error from "./modules/error";
 import sign from "./modules/sign";
 import system from "./modules/system";
 import { RouteRecordRaw } from "vue-router";
-let routes: RouteRecordRaw[] = [
+import routes from "@/router/route";
+let coreRoutes: RouteRecordRaw[] = [
+	...routes,
 	{
 		path: "/",
 		meta: {
@@ -11,15 +13,7 @@ let routes: RouteRecordRaw[] = [
 		},
 		component: () => import("@web/views/home/Home.vue"),
 	},
-	// 错误页面
-	{
-		path: "/error",
-		meta: {
-			__title: "error",
-		},
-		redirect: "/",
-		children: error,
-	},
+
 	// 系统功能
 	{
 		path: "/system",
@@ -36,6 +30,8 @@ let routes: RouteRecordRaw[] = [
 		component: () => import("@web/views/system/index.vue"),
 		children: sign,
 	},
+	// 错误页面
+	...error,
 	{
 		path: "/reflash",
 		component: () => import("@web/views/Reflash.vue"),
@@ -47,4 +43,4 @@ let routes: RouteRecordRaw[] = [
 		},
 	},
 ];
-export default routes;
+export default coreRoutes;

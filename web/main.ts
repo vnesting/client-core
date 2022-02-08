@@ -1,2 +1,3 @@
 import app from "@/app";
-export default app.mount("#app");
+let vm = app.mount("#app");
+export default vm;
